@@ -20,7 +20,7 @@ const StyledContainer = styled.div<StyledContainerProps>`
   ${({ $gutter }) =>
     $gutter !== false &&
     css`
-      ${media.md} {
+      ${media.xs} {
         padding-left: 4px;
         padding-right: 4px;
         margin-left: 0;
