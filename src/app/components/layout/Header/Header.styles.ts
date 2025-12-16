@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-import { cssVars, media } from "@/styles/globals";
+import { media, cssVars } from "@/styles/globals";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -28,6 +28,22 @@ const StyledHeader = styled.header`
     }
   }
 
+  .header__content {
+    justify-content: space-between;
+
+    ${media.md} {
+      justify-content: flex-start;
+    }
+
+    &-contact-button {
+      display: block;
+
+      ${media.md} {
+        display: none;
+      }
+    }
+  }
+
   nav {
     position: fixed;
     bottom: 0;
@@ -43,11 +59,11 @@ const StyledHeader = styled.header`
       ${cssVars.spacings.lg}px + env(safe-area-inset-bottom)
     );
 
-    /* Desktop: Reset to inline navigation */
     ${media.md} {
       position: static;
       background: transparent;
       border-top: none;
+      margin-left: auto;
       padding: 0;
       display: flex;
       justify-content: space-between;
@@ -56,7 +72,7 @@ const StyledHeader = styled.header`
 
     ul {
       display: flex;
-      justify-content: space-around; /* Even spacing on mobile */
+      justify-content: space-around;
       align-items: center;
       padding: 0;
       margin: 0;
@@ -66,7 +82,7 @@ const StyledHeader = styled.header`
       }
 
       li {
-        flex: 1; /* Equal width items on mobile */
+        flex: 1;
         text-align: center;
 
         ${media.md} {
@@ -79,6 +95,7 @@ const StyledHeader = styled.header`
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          gap: ${cssVars.spacings.xs}px;
           padding: ${cssVars.spacings.xs}px;
           font-size: 12px;
 
