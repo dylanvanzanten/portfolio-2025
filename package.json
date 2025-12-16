@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "generate:favicons": "node scripts/generate-favicons.mjs"
   },
   "dependencies": {
     "next": "16.0.8",
+    "next-intl": "^4.5.8",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "styled-components": "^6.1.19"
