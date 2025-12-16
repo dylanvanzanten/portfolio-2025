@@ -1,7 +1,25 @@
+import { useTranslations } from "next-intl";
+
+import Container from "@/components/layout/Container";
+import Section from "@/components/layout/Section/Section";
+import GridBlock from "@/components/layout/GridBlock/GridBlock";
+import TextBlock from "@/components/layout/TextBlock/TextBlock";
+
 export default function Home() {
+  const t = useTranslations("homepage");
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start"></main>
-    </div>
+    <Container>
+      <Section>
+        <GridBlock cols={1}>
+          <TextBlock columns={1} title={t("title")} titleAs="h6">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos.
+            </p>
+          </TextBlock>
+        </GridBlock>
+      </Section>
+    </Container>
   );
 }
