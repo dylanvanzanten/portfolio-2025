@@ -1,14 +1,35 @@
-import { Manrope, Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-// Font instances - must be used in layout.tsx to load the fonts
-export const manrope = Manrope({
-  subsets: ["latin"],
+export const manrope = localFont({
+  src: [
+    {
+      path: "../../../public/fonts/Manrope-VariableFont_wght.woff2",
+      weight: "200 800",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Manrope-VariableFont_wght.woff",
+      weight: "200 800",
+      style: "normal",
+    },
+  ],
   variable: "--font-manrope",
+  display: "swap",
 });
 
-export const inter = Inter({
-  subsets: ["latin"],
+export const inter = localFont({
+  src: [
+    {
+      path: "../../../public/fonts/Inter-VariableFont_opsz,wght.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Inter-VariableFont_opsz,wght.woff",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
   variable: "--font-inter",
+  display: "swap",
 });
-
-
