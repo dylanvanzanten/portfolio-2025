@@ -1,7 +1,7 @@
-export type PossibleIcons = "send" | "user";
+export type IconList = "send" | "user";
 
 export type IconProps = {
-  name: PossibleIcons;
+  name: IconList;
   size?: number;
   className?: string;
   color?: string;
