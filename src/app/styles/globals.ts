@@ -3,6 +3,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import SanitizeStyle from "@/styles/sanitize";
+import { Typography, inter, manrope } from "@/styles/typography";
 
 // Breakpoints
 export const breakpoints = {
@@ -70,6 +71,8 @@ export enum Colors {
   senary = "#",
   septenary = "#",
   octonary = "#",
+  black = "#000000",
+  white = "#FFFFFF",
 }
 
 // CSS Variables object for use in JS
@@ -90,6 +93,17 @@ export const cssVars = {
 // Global CSS Variables injection
 export const GlobalStyles = createGlobalStyle`
   ${SanitizeStyle}
+  ${Typography}
+
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
   
   :root {
     /* Breakpoints */
@@ -116,5 +130,11 @@ export const GlobalStyles = createGlobalStyle`
     --color-quinary: ${Colors.quinary};
     --color-senary: ${Colors.senary};
     --color-septenary: ${Colors.septenary};
+    --color-black: ${Colors.black};
+    --color-white: ${Colors.white};
+
+    /* Typography */
+    --font-manrope: ${manrope.style.fontFamily};
+    --font-inter: ${inter.style.fontFamily};
   }
 `;
